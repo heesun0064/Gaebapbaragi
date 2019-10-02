@@ -39,6 +39,7 @@ public class AdddrugActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "약을 먹은 날짜는 " + adddrug_edittext_date.getText().toString() + "입니다.", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(AdddrugActivity.this, InfoDrugActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });

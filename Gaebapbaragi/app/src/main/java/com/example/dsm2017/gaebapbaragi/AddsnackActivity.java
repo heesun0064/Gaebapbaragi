@@ -39,6 +39,7 @@ public class AddsnackActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "먹은 간식의 양이 " + addsnack_edittext_amount.getText().toString() + "만큼 증가했습니다.", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(AddsnackActivity.this, InfoSnackActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });

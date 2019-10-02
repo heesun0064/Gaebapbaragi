@@ -36,6 +36,7 @@ public class AddmealActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "먹은 식사의 양이 " + addmeal_edittext.getText().toString() + "만큼 증가했습니다.", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(AddmealActivity.this, InfoMealActivity.class);
                 startActivity(intent);
+                finish();
             }
             }
         });
