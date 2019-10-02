@@ -1,8 +1,11 @@
 package com.example.dsm2017.gaebapbaragi;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +17,8 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private static final int ADD_PET_REQUEST_CODE = 100;
 
     ArrayList<String> spinnerArrayList;
     ArrayAdapter<String> spinnerArrayAdapter;
@@ -102,11 +107,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void forthclick(View v){
         Intent intent = new Intent(MainActivity.this, AddpetActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, ADD_PET_REQUEST_CODE);
     }
 
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == ADD_PET_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                String petName = data.getStringExtra("name");
+                if (!TextUtils.isEmpty(petName)) {
+                    spinnerArrayList.add(petName);
+                    spinnerArrayAdapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, spinnerArrayList);
+                    Spinner spinner = findViewById(R.id.main_spinner);
+                    spinner.setAdapter(spinnerArrayAdapter);
+                }
+            }
+        }
     }
 }

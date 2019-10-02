@@ -36,9 +36,13 @@ public class AddpetActivity extends AppCompatActivity {
                 } else if (addpet_radio_male.isChecked() == false && addpet_radio_female.isChecked() == false) {
                     Toast.makeText(getApplicationContext(), "성별을 선택하세요", Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent intent = new Intent(AddpetActivity.this, MainActivity.class);
-                    Toast.makeText(getApplicationContext(), addpet_name.getText().toString() + "의 정보가 추가 되었습니다.", Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
+                    Intent intent = new Intent();
+                    intent.putExtra("name", addpet_name.getText().toString());
+                    intent.putExtra("age", addpet_age.getText().toString());
+                    intent.putExtra("kind", addpet_kind.getText().toString());
+                    intent.putExtra("gender", (addpet_radio_male.isChecked() == true)?"male":"female");
+                    setResult(RESULT_OK, intent);
+                    finish();
                 }
             }
         });
