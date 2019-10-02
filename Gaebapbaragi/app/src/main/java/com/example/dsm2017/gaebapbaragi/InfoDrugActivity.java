@@ -25,10 +25,17 @@ public class InfoDrugActivity extends AppCompatActivity {
         infoDrugArrayList.add(new item("약1","01/28"));
         infoDrugArrayList.add(new item("약2","02/28"));
         infoDrugArrayList.add(new item("약3","03/28"));
-        infoDrugArrayList.add(new item("약3","04/28"));
-        infoDrugArrayList.add(new item("약3","05/28"));
-        infoDrugArrayList.add(new item("약3","06/28"));
-        infoDrugArrayList.add(new item("약3","07/28"));
+        infoDrugArrayList.add(new item("약4","04/28"));
+        infoDrugArrayList.add(new item("약5","05/28"));
+        infoDrugArrayList.add(new item("약6","06/28"));
+        infoDrugArrayList.add(new item("약7","07/28"));
+        infoDrugArrayList.add(new item("약8","07/28"));
+        infoDrugArrayList.add(new item("약9","07/28"));
+        infoDrugArrayList.add(new item("약10","07/28"));
+        infoDrugArrayList.add(new item("약11","07/28"));
+        infoDrugArrayList.add(new item("약12","07/28"));
+        infoDrugArrayList.add(new item("약13","07/28"));
+        infoDrugArrayList.add(new item("약14","07/28"));
 
 //        infoDrugActivity.setHasFixedSize(true);
 
